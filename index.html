@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIFZZ STORE - JB AMANAH</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
+body{background:#fff;color:#111}
+.wrap{border:8px solid #000;min-height:100vh;padding:14px}
+#titikTiga{position:fixed;top:14px;left:14px;z-index:200;width:48px;height:48px;background:#000;color:#fff;border:3px solid #000;border-radius:14px;font-size:28px;font-weight:900;cursor:pointer;box-shadow:3px 3px 0 #0a4d2a;display:flex;align-items:center;justify-content:center}
+#menuTitikTiga{position:fixed;top:68px;left:14px;z-index:200;background:#fff;border:4px solid #000;border-radius:18px;box-shadow:6px 6px 0 #000;display:none;width:290px;overflow:hidden;max-height:85vh;overflow:auto}
+#menuTitikTiga button{display:block;width:100%;text-align:left;padding:16px;background:#fff;border:0;border-bottom:3px solid #000;cursor:pointer;font-weight:900;font-size:15px;color:#000}
+#menuTitikTiga button:last-child{border-bottom:0}
+#menuTitikTiga button:hover{background:#ffcc00}
+#menuTitikTiga button small{display:block;font-weight:400;font-size:12px;color:#555;margin-top:3px}
+.fullLayar{position:fixed;inset:0;background:#fff;z-index:400;display:none;flex-direction:column}
+.fullHeader{background:#0a4d2a;color:#fff;padding:14px;display:flex;align-items:center;gap:10px;border-bottom:4px solid #000}
+.fullHeader h2{flex:1;font-size:18px}
+.fullHeader button{background:#fff;color:#000;border:3px solid #000;width:40px;height:40px;border-radius:12px;font-weight:900;font-size:20px;cursor:pointer}
+.fullBody{flex:1;overflow:auto;padding:16px}
+.teksRapih{color:#000;font-weight:700;font-size:14px;line-height:1.6}
+.teksRapih b{color:#000;font-weight:900}
+.stepRapih{background:#fff;color:#000;border:3px solid #000;border-radius:14px;padding:14px;margin:10px 0}
+.stepRapih b{color:#000;font-weight:900;font-size:15px}
+.stepRapih p{color:#000;font-weight:700;font-size:14px;line-height:1.6;margin-top:4px}
+.topCenter{text-align:center;padding:14px 0 4px}
+.subGrafiti{font-weight:900;background:#000;color:#fff;display:inline-block;padding:6px 16px;border-radius:999px;margin-top:10px;font-size:12px}
+.ppGlobeTop{width:180px;height:180px;background:#0a4d2a;border:6px solid #000;border-radius:50%;box-shadow:6px 6px 0 #000;display:flex;align-items:center;justify-content:center;margin:0 auto;overflow:hidden}
+.ppGlobeTop span{font-size:180px;line-height:1;display:block;transform:scale(1.12)}
+.grafitiJejer{white-space:nowrap;text-align:center;margin-top:18px;font-size:46px;font-weight:900;letter-spacing:1px;line-height:1;color:#000;text-shadow:3px 3px 0 #0a4d2a, 6px 6px 0 rgba(0,0,0,.2)}
+.hero{text-align:center;margin-top:16px}
+.hero p{color:#000;margin:10px auto;max-width:520px;line-height:1.5;font-size:14px;font-weight:700}
+.verified{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.verified span{background:#000;color:#fff;padding:6px 10px;border-radius:999px;font-size:11px;font-weight:800}
+.verified span.green{background:#0a4d2a}
+.box{border:4px solid #000;border-radius:20px;padding:16px;margin-top:16px;box-shadow:8px 8px 0 #000;background:#fff}
+.box.dark{background:#0a4d2a;color:#fff} .box.dark p{color:#d8ffe9}
+.box h2{font-size:22px;margin-bottom:8px;font-weight:900;color:#000} .box.dark h2{color:#fff} .box p{font-size:13px;line-height:1.7;color:#000;font-weight:700}
+.linkList a{display:block;background:#0a4d2a;color:#fff;border:4px solid #000;border-radius:16px;padding:16px;margin:12px 0;text-decoration:none;font-weight:900;font-size:20px;line-height:1.2;box-shadow:6px 6px 0 #000}
+.linkList a small{display:block;color:#c8ffdd;font-weight:700;font-size:13px;margin-top:5px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.card{border:3px solid #000;border-radius:16px;padding:14px;background:#0a4d2a;color:#fff;box-shadow:5px 5px 0 #000}
+.card b{font-size:15px} .card p{font-size:12px;color:#c8ffdd;margin-top:4px}
+.btn{display:block;text-align:center;padding:13px;border-radius:14px;text-decoration:none;font-weight:900;margin-top:10px;border:3px solid #000;box-shadow:4px 4px 0 #000;cursor:pointer}
+.btn-wa{background:#25D366;color:#000} .btn-dark{background:#000;color:#fff} .btn-white{background:#fff;color:#111}
+.testi{border:3px dashed #000;border-radius:16px;padding:12px;margin:8px 0;background:#fffbe6}
+.testi b, .testi p{color:#000;font-weight:700}
+.keceBadge{display:inline-block;background:#ffcc00;color:#000;border:3px solid #000;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:900;box-shadow:3px 3px 0 #000;margin:2px}
+footer{text-align:center;font-size:11px;color:#888;margin-top:18px;line-height:1.6}
+#welcome{position:fixed;inset:0;background:#0a4d2a;z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;border:8px solid #000;transition:opacity .5s}
+#welcome .grafiti-welcome{font-size:42px;font-weight:900;line-height:1.15;letter-spacing:0}
+#welcome .line1{color:#ffcc00;text-shadow:3px 3px 0 #000, 5px 5px 0 rgba(0,0,0,.3)}
+#welcome .line2{color:#ffffff;text-shadow:3px 3px 0 #000, 5px 5px 0 rgba(0,0,0,.3)}
+#welcome .line2 b{color:#25D366}
+#welcome .line3{color:#a8ffc8;text-shadow:3px 3px 0 #000, 5px 5px 0 rgba(0,0,0,.3)}
+#welcome .line3 b{color:#ffcc00}
+#welcome p{color:#fff;font-weight:800;margin-top:14px;background:#000;padding:6px 14px;border-radius:999px}
+#welcome .count{margin-top:14px;background:#ffcc00;color:#000;padding:8px 16px;border-radius:999px;font-weight:900;border:3px solid #000}
+#globalChat{position:fixed;inset:0;background:#fff;z-index:250;display:none;flex-direction:column}
+#globalHeader{background:#0a4d2a;color:#fff;padding:12px;display:flex;align-items:center;gap:10px;border-bottom:4px solid #000}
+.globalGlobe{width:52px;height:52px;border-radius:50%;background:#ffcc00;border:3px solid #fff;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:3px 3px 0 #000;flex-shrink:0}
+#globalBody{flex:1;overflow:auto;padding:12px;background:#f2f2f2;display:flex;flex-direction:column;gap:8px}
+.gmsg{max-width:85%;padding:10px 12px;border-radius:14px;font-size:14px;line-height:1.5;border:2px solid #000;background:#fff;position:relative;color:#000;font-weight:700}
+.gmsg.me{background:#0a4d2a;color:#fff;margin-left:auto}
+.gmsg.admin{background:#ffcc00;color:#000}
+.gmsg.ai{background:#eee;color:#555;border-style:dashed}
+.gmsg small{display:block;font-size:10px;opacity:.7;margin-bottom:3px;font-weight:800}
+.gmsg .delBtn{position:absolute;top:4px;right:6px;background:#ff0000;color:#fff;border:2px solid #000;border-radius:50%;width:22px;height:22px;font-size:12px;cursor:pointer}
+.tag{background:#000;color:#ffcc00;padding:2px 8px;border-radius:999px;font-weight:900;cursor:pointer}
+#mentionBox{position:absolute;bottom:58px;left:8px;right:8px;background:#fff;border:3px solid #000;border-radius:14px;display:none;z-index:10;overflow:hidden}
+#mentionBox button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:12px;background:#fff;border:0;cursor:pointer;font-weight:900;color:#000}
+#mentionBox button:hover{background:#ffcc00}
+#globalInputWrap{position:relative}
+#globalInput{display:flex;border-top:4px solid #000;background:#fff;padding:8px;gap:6px}
+#globalInput input{flex:1;padding:12px;border:3px solid #000;border-radius:12px;outline:none}
+#globalInput button{padding:0 16px;border-radius:12px;border:3px solid #000;font-weight:900;background:#000;color:#fff}
+#adminBar{background:#ffcc00;padding:8px 10px;font-size:12px;font-weight:800;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #000;flex-wrap:wrap;gap:6px;color:#000}
+#chatFab{position:fixed;bottom:18px;right:18px;background:#0a4d2a;color:#fff;border:3px solid #000;width:68px;height:68px;border-radius:50%;font-size:30px;cursor:pointer;box-shadow:5px 5px 0 #000;z-index:99}
+#badWordOverlay{position:fixed;inset:0;background:#ff0000;z-index:999;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+#badWordOverlay h1{font-size:52px;font-weight:900;color:#fff;-webkit-text-stroke:3px #000;text-shadow:6px 6px 0 #000;line-height:.9}
+#nyamarOverlay{position:fixed;inset:0;background:#000;z-index:999;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+#nyamarOverlay h1{font-size:48px;font-weight:900;line-height:.95;color:#ffcc00;text-shadow:3px 3px 0 #fff, 6px 6px 0 #0a4d2a}
+#banOverlay{position:fixed;inset:0;background:#111;z-index:1000;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+#banOverlay h1{font-size:32px;font-weight:900;line-height:1.2;color:#fff}
+#banOverlay p{color:#ffcc00;font-weight:800;margin-top:14px;line-height:1.6}
+#orderBody{flex:1;overflow:auto;padding:12px;background:#f2f2f2;display:flex;flex-direction:column;gap:8px}
+.orderInfo{background:#fffbe6;border:3px solid #000;border-radius:14px;padding:12px;font-size:13px;line-height:1.6;font-weight:700;color:#000}
+.orderSibuk{background:#ff0000;color:#fff;border:3px solid #000;border-radius:16px;padding:20px;text-align:center;font-weight:900}
+.orderSibuk h2{font-size:24px;line-height:1.2}
+#orderInput{display:flex;border-top:4px solid #000;background:#fff;padding:8px;gap:6px}
+#orderInput input{flex:1;padding:12px;border:3px solid #000;border-radius:12px;outline:none}
+#orderInput button{padding:0 16px;border-radius:12px;border:3px solid #000;font-weight:900;background:#000;color:#fff}
+.orderField{width:100%;padding:12px;border:3px solid #000;border-radius:12px;margin:6px 0;font-weight:700}
+#aiBody{flex:1;overflow:auto;padding:12px;background:#f2f2f2;display:flex;flex-direction:column;gap:8px}
+#aiInput{display:flex;border-top:4px solid #000;background:#fff;padding:8px;gap:6px}
+#aiInput input{flex:1;padding:12px;border:3px solid #000;border-radius:12px;outline:none}
+#aiInput button{padding:0 16px;border-radius:12px;border:3px solid #000;font-weight:900;background:#000;color:#fff}
+.aiChip{display:inline-block;background:#fff;border:2px solid #000;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800;margin:3px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<button id="titikTiga" onclick="toggleMenuTitik()">⋮</button>
+<div id="menuTitikTiga">
+  <button onclick="bukaFull('layarAI')">🤖 AI RIFZZ STORE<small>Tanya apapun ke AI RIFZZ, kayak Gemini - Jawab soal JB, rekber, dll</small></button>
+  <button onclick="bukaFull('layarOrder')">🛒 ORDER MELALUI WEB<small>Order langsung di web, chat sama admin - Cuma 1 buyer!</small></button>
+  <button onclick="bukaFull('layarRekber')">🔒 CARA REKBER DI RIFZZ STORE<small>Cara rekber lengkap, biar aman 100%</small></button>
+  <button onclick="bukaFull('layarClone')">🛡️ CARA BIAR GAK KENA CLONE RIFZZ<small>Cara bedain RIFZZ asli vs penipu, singkat & jelas</small></button>
+</div>
+
+<!-- AI RIFZZ STORE - FULL 1 LAYAR -->
+<div id="layarAI" class="fullLayar">
+  <div class="fullHeader"><h2>🤖 AI RIFZZ STORE</h2><button onclick="tutupFull('layarAI')">✖</button></div>
+  <div id="aiBody">
+    <div class="orderInfo">
+      <b>🤖 HALO, GUA AI RIFZZ!</b><br>
+      Tanya apapun ke gua, kayak Gemini. Soal JB, rekber, clone, harga, cara order, game, pelajaran, apa aja gua jawab!<br>
+      <b>Larangan tetep sama:</b> Dilarang kata kasar / jorok / nanya yang aneh-aneh. Kalo melanggar 3x = BANNED 1 minggu!<br><br>
+      <b>Coba tanya:</b><br>
+      <span class="aiChip" onclick="aiCepat('Cara rekber gimana min?')">Cara rekber gimana?</span>
+      <span class="aiChip" onclick="aiCepat('Cara bedain RIFZZ asli vs clone?')">Bedain asli vs clone?</span>
+      <span class="aiChip" onclick="aiCepat('Mau order JB akun game gimana?')">Mau order JB?</span>
+      <span class="aiChip" onclick="aiCepat('Harga JB akun game berapa?')">Harga JB berapa?</span>
+      <span class="aiChip" onclick="aiCepat('Apa itu rekber?')">Apa itu rekber?</span>
+    </div>
+    <div id="aiChatList" style="display:flex;flex-direction:column;gap:8px">
+      <div class="gmsg ai"><small>🤖 AI RIFZZ STORE</small>Halo Bos! Gua AI RIFZZ 🤖<br>Tanya apapun ke gua, gua jawab kayak Gemini. Soal JB mah gas, gua paham banget! Mau tanya apa?</div>
+    </div>
+  </div>
+  <div id="aiInput"><input id="aiText" placeholder="Tanya apapun ke AI RIFZZ... (soal JB gapapa)" autocomplete="off"><button onclick="kirimAI()">KIRIM</button></div>
+  <a href="https://wa.me/6285725887705" target="_blank" style="display:block;text-align:center;background:#25D366;color:#000;padding:10px;font-weight:900;text-decoration:none;border-top:3px solid #000">MAU ORDER BENERAN? CHAT ADMIN → 0857-2588-7705</a>
+</div>
+
+<div id="layarOrder" class="fullLayar">
+  <div class="fullHeader"><h2>🛒 ORDER MELALUI WEB - RIFZZ STORE</h2><button onclick="tutupFull('layarOrder')">✖</button></div>
+  <div id="orderBody">
+    <div class="orderInfo"><b>📢 PENJELASAN ORDER WEB:</b><br>Ini chat khusus order <b>cuma buat 1 orang aja!</b><br>Kalo tulisan nya <b>"Maaf server sedang di pake"</b> berarti ada buyer lain yang lagi order dan belom selesai. <b>Nunggu selesai baru bisa masuk ya!</b><br>Chat Global yang di bawah kanan (💬) itu beda, itu bebas bisa chat semua nya. Yang ini khusus order 1 orang.<br><br><b>Status:</b> <span id="orderStatusTxt">🟢 SERVER KOSONG - SILAHKAN ORDER</span><br><b>Sedang dilayani:</b> <span id="orderSiapaTxt">- Belum ada -</span></div>
+    <div id="orderSibukBox" style="display:none" class="orderSibuk"><div style="font-size:50px">⏳🚫</div><h2>MAAF SERVER SEDANG DI PAKE</h2><p style="margin-top:10px">Ada buyer lain yang lagi order dan belom selesai.<br>Nunggu selesai baru bisa masuk ya!<br><br>Sedang dilayani: <span id="orderSibukSiapa">-</span><br>Tunggu admin selesaiin dulu 🙏</p><p style="margin-top:10px;font-size:12px">Sambil nunggu, lu bisa chat bebas di Chat Global 💬 di bawah kanan</p></div>
+    <div id="orderGabungBox" style="display:none"><div class="orderInfo" style="background:#fff"><b>🛒 MAU ORDER? ISI DULU:</b><br><input id="orderNama" class="orderField" placeholder="Nama lu (contoh: Dimas)"><input id="orderMau" class="orderField" placeholder="Mau order apa? (contoh: Mau JB akun game)"><button class="btn btn-wa" onclick="mulaiOrder()" style="width:100%">🚀 MULAI ORDER SEKARANG</button></div></div>
+    <div id="orderChatBox" style="display:none;flex-direction:column;gap:8px"><div id="orderChatList" style="display:flex;flex-direction:column;gap:8px"></div></div>
+  </div>
+  <div id="orderAdminBar" style="background:#ffcc00;padding:8px 10px;font-weight:800;display:none;justify-content:space-between;align-items:center;border-bottom:3px solid #000;gap:6px;flex-wrap:wrap"><span id="orderAdminTxt">Mode: ADMIN - Lu yang layani</span><button onclick="adminSelesaikanOrder()" style="background:#ff0000;color:#fff;border:0;padding:8px 12px;border-radius:999px;font-weight:900">🗑️ SELESAIKAN / HAPUS ORANG INI</button></div>
+  <div id="orderInputWrap" style="display:none"><div id="orderInput"><input id="orderText" placeholder="Ketik order lu disini... (cuma lu + admin yang liat)" autocomplete="off"><button onclick="kirimOrder()">KIRIM</button></div><button onclick="buyerSelesaikanOrder()" style="width:100%;background:#000;color:#fff;padding:10px;font-weight:900;border:0;border-top:3px solid #000">✅ ORDER SELESAI - KELUAR & KASIH GILIRAN BUYER LAIN</button></div>
+  <a href="https://wa.me/6285725887705" target="_blank" style="display:block;text-align:center;background:#25D366;color:#000;padding:10px;font-weight:900;text-decoration:none;border-top:3px solid #000">ATAU LANJUT CHAT DI WA → 0857-2588-7705</a>
+</div>
+
+<div id="layarRekber" class="fullLayar">
+  <div class="fullHeader"><h2>🔒 CARA REKBER DI RIFZZ STORE</h2><button onclick="tutupFull('layarRekber')">✖</button></div>
+  <div class="fullBody">
+    <p class="teksRapih" style="text-align:center">Rekber itu perantara admin. Duit lu ditahan admin dulu, bukan langsung ke penjual. Aman 100%.</p>
+    <div class="stepRapih"><b>1. CHAT ADMIN DULU</b><p>Chat admin di WA 0857-2588-7705. Bilang mau JB apa. Admin bikinin grup rekber buat lu, penjual, dan admin.</p></div>
+    <div class="stepRapih"><b>2. CEK DATA AKUN BARENG-BARENG</b><p>Penjual kirim detail akun di grup. Pembeli cek nickname, level, skin, rank, bind email / no HP.</p></div>
+    <div class="stepRapih"><b>3. PEMBELI TRANSFER KE ADMIN RIFZZ</b><p>Transfer sesuai harga deal ke ADMIN RIFZZ, bukan ke penjual. Admin kirim bukti dana sudah masuk di grup.</p></div>
+    <div class="stepRapih"><b>4. PENJUAL SERAHIN AKUN</b><p>Kalo dana udah masuk, penjual kasih email + password + data akun lengkap ke pembeli. Pembeli langsung login dan cek.</p></div>
+    <div class="stepRapih"><b>5. GANTI DATA & AMANKAN AKUN</b><p>Pembeli ganti email, password, no HP, bind baru. Admin ngajarin sampe bisa.</p></div>
+    <div class="stepRapih"><b>6. KONFIRMASI & DANA DITERUSIN</b><p>Kalo akun udah aman, pembeli bilang DONE. Baru admin terusin duit ke penjual. Kalo bermasalah, duit balik 100% ke pembeli.</p></div>
+    <div class="stepRapih"><b>ATURAN REKBER YANG WAJIB TAU</b><p>Fee rekber murah, tanya admin. Jangan transaksi di luar grup, itu penipu. Nomor resmi cuma 0857-2588-7705. Garansi 100%. Kirim bukti transfer asli di grup.</p></div>
+    <a class="btn btn-wa" href="https://wa.me/6285725887705?text=Halo%20min%2C%20mau%20pake%20rekber%20RIFZZ" target="_blank">🔒 MAU REKBER? CHAT ADMIN RIFZZ SEKARANG</a>
+  </div>
+</div>
+
+<div id="layarClone" class="fullLayar">
+  <div class="fullHeader"><h2>🛡️ CARA BIAR GAK KENA CLONE RIFZZ</h2><button onclick="tutupFull('layarClone')">✖</button></div>
+  <div class="fullBody">
+    <p class="teksRapih" style="text-align:center">Banyak penipu clone RIFZZ. Cek 4 ini aja, langsung ketauan mana asli mana clone.</p>
+    <div class="stepRapih"><b>1. CEK NOMOR WA</b><p>RIFZZ asli cuma 0857-2588-7705. Nomor lain ngaku RIFZZ = penipu. Langsung block.</p></div>
+    <div class="stepRapih"><b>2. CEK LINKTREE</b><p>Linktree asli cuma linktr.ee/rifzzstore10. Link lain = clone.</p></div>
+    <div class="stepRapih"><b>3. JANGAN MAU TRANSFER LANGSUNG</b><p>RIFZZ asli selalu pake grup rekber. Kalo diajak transfer langsung tanpa grup = penipu.</p></div>
+    <div class="stepRapih"><b>4. JANGAN MAU DIPAKSA</b><p>RIFZZ asli nggak pernah maksa buru-buru transfer. Kalo dipaksa-paksa bilang promo hangus = penipu.</p></div>
+    <div class="stepRapih"><b>KALO UDAH KENA CLONE?</b><p>Stop transfer. Screenshot chat + nomornya. Block nomornya. Laporin ke admin asli 0857-2588-7705.</p></div>
+    <div style="background:#000;color:#fff;border:3px solid #000;border-radius:14px;padding:14px;margin-top:12px;text-align:center"><b style="font-size:15px">RUMUSNYA: NOMOR BEDA = PENIPU. RIFZZ CUMA 1.</b></div>
+    <a class="btn btn-wa" href="https://wa.me/6285725887705?text=Halo%20min%2C%20ada%20yang%20clone%20RIFZZ" target="_blank">🚨 LAPORIN CLONE KE ADMIN ASLI</a>
+  </div>
+</div>
+
+<div id="welcome"><div style="font-size:64px">👋</div><div class="grafiti-welcome"><div class="line1">𝗛𝗔𝗟𝗢 𝗦𝗔𝗬𝗔 𝗔𝗗𝗠𝗜𝗡 𝗥𝗜𝗙𝗭𝗭</div><div class="line2">𝗔𝗗𝗔 𝗬𝗔𝗡𝗚 𝗕𝗜𝗦𝗔 <b>𝗦𝗔𝗬𝗔 𝗕𝗔𝗡𝗧𝗨 ?</b></div><div class="line3">𝗔𝗧𝗔𝗨 𝗠𝗔𝗨 𝗖𝗘𝗞 <b>𝗪𝗘𝗕 𝗥𝗜𝗙𝗭𝗭</b></div></div><p>JB Amanah • Fast Respon • Garansi 100%</p><div class="count" id="countTxt">Hilang dalam 3 detik...</div></div>
+
+<div class="wrap">
+  <div class="topCenter"><div class="subGrafiti">✅ JB AMANAH 100% • TERPERCAYA</div><br><span class="keceBadge">🔥 KECE • TRUSTED • NO SCAM</span> <span class="keceBadge">💎 PREMIUM STORE</span></div>
+  <div class="hero"><div class="ppGlobeTop"><span>🌍</span></div><div class="grafitiJejer">𝗥𝗜𝗙𝗭𝗭 𝗦𝗧𝗢𝗥𝗘</div><p style="margin-top:14px"><b>Haloo aku admin RIFZZ, ada yang bisa kami bantu? 🤗</b><br>JB Aman, Cepat, Terpercaya. Udah ratusan orang order, 0 kasus rip / scam.</p><div class="verified"><span class="green">✅ TERPERCAYA</span><span>✅ AMANAH</span><span class="green">✅ FAST RESPON</span><span>✅ GARANSI 100%</span><span>⭐ 4.9 / 5.0</span><span>👥 1200+ ORDER</span></div></div>
+  <div class="box dark" style="text-align:center"><h2>👑 PROFIL - RIFZZ GANTENG</h2><p style="text-align:center"><b>Nama:</b> RIFZZ • <b>Role:</b> Admin JB • Owner RIFZZ STORE • Developer Web<br><b>Domisili:</b> Tegal, Jawa Tengah - Indonesia<br><b>WhatsApp:</b> 0857-2588-7705 (Cuma 1 nomor ini, hati-hati penipu!)<br><b>Prinsip:</b> "Mending rugi dikit, daripada nipu customer. Rejeki lancar kalo amanah."</p><a class="btn btn-wa" href="https://wa.me/6285725887705?text=Halo%20min%20RIFZZ%2C%20mau%20order" target="_blank">💬 CHAT ADMIN RIFZZ - 0857-2588-7705</a><a class="btn btn-white" href="https://whatsapp.com/channel/0029VbBuVEh90x31kIVo6y2G" target="_blank">📸 LIHAT TESTIMONI RIFZZ STORE</a></div>
+  <div class="box"><h2 style="text-align:center">🔗 LINK-LINK RIFZZ STORE</h2><div class="linkList"><a href="https://chat.whatsapp.com/IaXWGQ4BQbs63L2VsSUhVf?s=cl&p=a&iam=2" target="_blank">👥 KJT - KOMUNITAS JB TEGAL <small>Komunitas JB Tegal - Join, info JB, promo tiap hari</small></a><a href="https://whatsapp.com/channel/0029VbBuVEh90x31kIVo6y2G" target="_blank">⭐ TESTIMONI RIFZZ STORE <small>Bukti order asli, testi real customer - Cek dulu sebelum order</small></a><a href="https://chat.whatsapp.com/LeSL93vTBlT46sDtxwmHnP?s=cl&p=a&iam=2" target="_blank">🔥 GRUP JB RIFZZ 01 <small>Grup JB RIFZZ 01 - Order Jual Beli Akun Game cepet, admin fast respon</small></a><a href="https://wa.me/6285725887705?text=Mau%20JB%20akun%20game" target="_blank">🎮 JB AKUN GAME <small>Jual Beli Akun - Aman, Pake Rekber Admin</small></a><a href="https://linktr.ee/rifzzstore10" target="_blank">🌳 LINKTREE RIFZZ STORE <small>Buka Linktree RIFZZ Store - Semua link Jual Beli Akun Game dll ada disini</small></a></div></div>
+  <div class="grid"><div class="card"><b>🛡️ GARANSI 100%</b><p>Kalo ada masalah, uang balik / diganti. Chat admin aja.</p></div><div class="card"><b>⚡ ADMIN FAST RESPON</b><p>Admin online, order langsung dibales, nggak pake lama.</p></div><div class="card"><b>📸 TESTI REAL</b><p>Semua testi dari customer asli, bukan editan.</p></div><div class="card"><b>🔒 REKBER ADMIN</b><p>JB pake perantara admin, penjual & pembeli sama-sama aman.</p></div></div>
+  <div class="box"><h2>⭐ TESTIMONI CUSTOMER - REAL NO SETTINGAN</h2><div class="testi"><b>⭐⭐⭐⭐⭐ - Dimas, Jakarta</b><p>"saya order akun di rifzz amanah banget dan gw di ajarin sampe bisa. Adminnya sabar pol, nggak pelit ilmu. Recommended banget!"</p></div><div class="testi"><b>⭐⭐⭐⭐⭐ - Rizky, Surabaya</b><p>"Awalnya ragu, tapi setelah JB pake rekber RIFZZ, aman 100%. Recommended!"</p></div><div class="testi"><b>⭐⭐⭐⭐⭐ - Haikal, Tegal</b><p>"Adminnya ganteng, fast respon, kece parah! Order sekali langsung langganan. 10/10 deh, RIFZZ STORE emang paling kece!"</p></div><div class="testi"><b>⭐⭐⭐⭐⭐ - Andra, Bandung</b><p>"JB pake rekber RIFZZ tuh enak banget, nggak was-was. Duit aman, akun langsung dikasih. Mantap!"</p></div><a class="btn btn-dark" href="https://whatsapp.com/channel/0029VbBuVEh90x31kIVo6y2G" target="_blank">LIHAT SEMUA TESTI DI CHANNEL →</a></div>
+  <div class="box dark"><h2>📜 TENTANG JB RIFZZ - KENAPA HARUS ORDER DISINI?</h2><p>Selamat datang di <b>RIFZZ STORE</b>, tempat Jual Beli (JB) paling aman, amanah, dan terpercaya di Indonesia. Kami sudah melayani lebih dari <b>1200+ order</b> dari seluruh Indonesia, mulai dari Jual Beli Akun Game dll, dan masih banyak lagi.<br><br><b>Kenapa AMANAH BANGET?</b> 1. Admin Asli, Bukan Bot. 2. Pake Rekber Admin. 3. Garansi 100%. 4. Testi Real. 5. Fast Respon. 6. Harga Jujur.<br><br><b>HATI-HATI PENIPU!</b> Nomor resmi kami CUMA SATU: <b>0857-2588-7705</b>. Selain nomor itu, itu PENIPU.<br><br><b>- RIFZZ, Admin JB Amanah & Terpercaya -</b></p><a class="btn btn-wa" href="https://wa.me/6285725887705?text=Halo%20min%2C%20mau%20order" target="_blank">✅ UDAH PERCAYA? ORDER SEKARANG</a></div>
+  <footer>© 2026 RIFZZ STORE • JB Amanah & Terpercaya • Admin: RIFZZ Ganteng • Developer Web<br>WA Resmi Cuma 1: 0857-2588-7705 • Tegal, Jawa Tengah - Indonesia</footer>
+</div>
+
+<button id="chatFab" onclick="openGlobal()">💬</button>
+<div id="globalChat">
+  <div id="globalHeader"><div class="globalGlobe">🌎</div><div style="flex:1"><b style="font-size:18px">CHAT GLOBAL ORDER - BEBAS BUAT SEMUA 🌎</b><div style="font-size:12px">🟢 <span id="onlineCount">12</span> Online • Ketik @ buat tag admin • Pelanggaran: <span id="pelanggaranTxt">0/3</span></div></div><button onclick="closeGlobal()" style="background:#fff;border:0;padding:8px 12px;border-radius:12px;font-weight:900">✖</button></div>
+  <div id="adminBar"><span id="modeTxt">Mode: TAMU - Chat Bebas</span><div style="display:flex;gap:6px"><button onclick="toggleAdmin()" id="adminBtn" style="background:#000;color:#fff;border:0;padding:6px 12px;border-radius:999px;font-weight:900">👑 SAYA RIFZZ ADMIN ASLI</button><button onclick="hapusSemuaChat()" id="hapusSemuaBtn" style="background:#ff0000;color:#fff;border:0;padding:6px 12px;border-radius:999px;font-weight:900;display:none">🗑️ HAPUS SEMUA CHAT</button></div></div>
+  <div id="globalBody"><div class="gmsg admin"><small>👑 ADMIN RIFZZ - RIFZZ CUMA 1</small>Haloo selamat datang di Chat Global Order 🌎<br>Ini chat bebas buat semua nya! Semua bisa tanya jawab bebas! Gw RIFZZ, admin asli. Ketik @ buat tag gw.<br><br>⚠️ <b>PERATURAN:</b> Dilarang kata kasar! 3x melanggar = BANNED 1 MINGGU!<br>💡 Mau order private 1 orang? Pencet titik tiga ⋮ -> ORDER MELALUI WEB</div></div>
+  <div id="globalInputWrap"><div id="mentionBox"><button onclick="pilihTag()"><span style="font-size:24px">👑</span><span style="text-align:left"><b>@rifzzadminasli</b><br><small style="font-weight:400">RIFZZ Admin Asli • RIFZZ CUMA 1 • Klik buat tag</small></span><span style="margin-left:auto">👈 KLIK</span></button></div><div id="globalInput"><input id="globalText" placeholder="Ketik... pencet @ buat tag @rifzzadminasli" autocomplete="off"><button onclick="sendGlobal()">KIRIM</button></div></div>
+  <a href="https://wa.me/6285725887705" target="_blank" style="display:block;text-align:center;background:#25D366;color:#000;padding:10px;font-weight:900;text-decoration:none;border-top:3px solid #000">LANJUT CHAT DI WA → 0857-2588-7705</a>
+</div>
+<div id="badWordOverlay"><div style="font-size:80px">😡🚫</div><h1>HAMA SIHH LUU<br>MATI AJA GITUU</h1><p style="color:#fff;font-weight:900;margin-top:12px;background:#000;padding:10px 16px;border-radius:999px" id="badWordTxt">Ketahuan ngomong yang nggak pantas! Jaga omongan lu wok!</p><button onclick="closeBadWord()" style="margin-top:16px;background:#fff;color:#000;border:4px solid #000;padding:12px 24px;border-radius:999px;font-weight:900">SORRY MIN, JANJI NGGAK ULANG 🙏</button></div>
+<div id="nyamarOverlay"><div style="font-size:70px">🤡</div><h1>RIFZZ CUMA 1<br>KAMU MAU NYAMAR<br>YAAA WKWKWK<br>PAKE NAMA LAIN YAA</h1><p style="color:#fff;font-weight:800;margin-top:14px">Lu bukan RIFZZ asli! Kode salah! RIFZZ cuma gw 1! Ganti nama lu dulu wok!</p><button onclick="closeNyamar()" style="margin-top:16px;background:#ffcc00;color:#000;border:4px solid #fff;padding:12px 24px;border-radius:999px;font-weight:900">OK MIN, GANTI NAMA 🙏</button></div>
+<div id="banOverlay"><div style="font-size:80px">🚫😡</div><h1>Mohon maaf anda telah melanggar peraturan dari admin rifzz<br>mau coba web minggu depan yaa</h1><p id="banTxt">Kamu udah 3x ngomong kasar. Web dikunci 1 minggu.<br>Sabar ya, balik lagi minggu depan!</p><p style="color:#fff;font-size:12px">- ADMIN RIFZZ -</p></div>
+
+<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.7.2.0.min.js"></script>
+<script>
+function cekBan(){ let sampai = parseInt(localStorage.getItem('rifzz_ban_until')||'0'); if(sampai && Date.now() < sampai){ let sisaHari = Math.ceil((sampai - Date.now())/86400000); let sisaJam = Math.ceil((sampai - Date.now())/3600000); document.getElementById('banOverlay').style.display='flex'; document.getElementById('banTxt').innerHTML = 'Kamu udah 3x ngomong kasar. Web dikunci 1 minggu.<br>Sisa '+sisaHari+' hari lagi ('+sisaJam+' jam).<br>Sabar ya, balik lagi minggu depan!'; document.getElementById('welcome').style.display='none'; return true; } if(sampai && Date.now() >= sampai){ localStorage.removeItem('rifzz_ban_until'); localStorage.setItem('rifzz_pelanggaran','0'); } return false; }
+function updatePelanggaranTxt(){ let p=parseInt(localStorage.getItem('rifzz_pelanggaran')||'0'); let el=document.getElementById('pelanggaranTxt'); if(el) el.textContent=p+'/3'; }
+function tambahPelanggaran(){ let p = parseInt(localStorage.getItem('rifzz_pelanggaran')||'0') + 1; localStorage.setItem('rifzz_pelanggaran', p); updatePelanggaranTxt(); if(p >= 3){ let sampai = Date.now() + (7*24*60*60*1000); localStorage.setItem('rifzz_ban_until', sampai); document.getElementById('badWordOverlay').style.display='none'; document.getElementById('globalChat').style.display='none'; document.getElementById('banOverlay').style.display='flex'; document.getElementById('banTxt').innerHTML = 'Kamu udah 3x ngomong kasar. Web dikunci 1 minggu.<br>Sisa 7 hari lagi.<br>Sabar ya, balik lagi minggu depan!'; return true; } else { document.getElementById('badWordTxt').textContent = 'Ketahuan ngomong kasar! Pelanggaran '+p+'/3! Sisa '+(3-p)+' kesempatan lagi! Jaga omongan lu wok!'; document.getElementById('badWordOverlay').style.display='flex'; if(navigator.vibrate) navigator.vibrate([200,100,200,100,300]); return false; } }
+cekBan(); updatePelanggaranTxt();
+function toggleMenuTitik(){let m=document.getElementById('menuTitikTiga');m.style.display=(m.style.display==='block')?'none':'block';}
+document.addEventListener('click',function(e){let btn=document.getElementById('titikTiga');let menu=document.getElementById('menuTitikTiga');if(btn&&menu&&!btn.contains(e.target)&&!menu.contains(e.target)){menu.style.display='none';}});
+function bukaFull(id){document.getElementById('menuTitikTiga').style.display='none';document.getElementById(id).style.display='flex';document.body.style.overflow='hidden'; if(id==='layarOrder'){ refreshOrderUI(); }}
+function tutupFull(id){document.getElementById(id).style.display='none';document.body.style.overflow='auto';}
+let detik=3; let timer=setInterval(()=>{detik--;let c=document.getElementById('countTxt');if(c)c.textContent='Hilang dalam '+detik+' detik...';if(detik<=0){clearInterval(timer);let w=document.getElementById('welcome');w.style.opacity='0';setTimeout(()=>w.style.display='none',500)}},1000);
+let isAdmin=false, adminTimer=null;
+let badWords=['asu','kontol','kont*l','anjing','anj*ng','anjg','babi','bab*','tolol','memek','mem*k','bangsat','bajingan','ngentot','ngent*d','pantek','jancok','janc*k','goblok','gob*lok','tai','taek','bego','kampret','lonte','pelacur','porno','bokep','sex','ngewe','coli','jilmek','ewe'];
+let dilarangAI=['bokep','porno','sex','ngewe','coli','hack akun orang','hack','bobol akun','curi akun','buat ktp palsu','palsu ktp','bunuh','bom','narkoba','jual narkoba'];
+function containsBadWord(txt){let low=' '+txt.toLowerCase().replace(/[^a-z0-9 ]/g,' ')+' ';return badWords.some(w=>low.includes(w));}
+function containsDilarang(txt){let low=txt.toLowerCase(); return dilarangAI.some(w=>low.includes(w));}
+function showBadWord(){ tambahPelanggaran(); }
+function closeBadWord(){document.getElementById('badWordOverlay').style.display='none'}
+function showNyamar(){document.getElementById('nyamarOverlay').style.display='flex';if(navigator.vibrate)navigator.vibrate([200,100,200]);}
+function closeNyamar(){document.getElementById('nyamarOverlay').style.display='none';window.myName=null;openGlobal();}
+function klikTag(){alert('👑 @rifzzadminasli - RIFZZ Admin Asli\nRIFZZ cuma 1, ini admin asli RIFZZ!');}
+function formatTag(txt){return txt.replace(/@rifzzadminasli/gi,'<span class="tag" onclick="klikTag()">@rifzzadminasli</span>').replace(/@rifzz/gi,'<span class="tag" onclick="klikTag()">@rifzzadminasli</span>');}
+function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+document.getElementById('globalText')?.addEventListener('input',e=>{let v=e.target.value;let box=document.getElementById('mentionBox');if(v.includes('@')){box.style.display='block';}else{box.style.display='none';}});
+function pilihTag(){let inp=document.getElementById('globalText');inp.value=inp.value.replace(/@.*$/,'').trim()+' @rifzzadminasli ';document.getElementById('mentionBox').style.display='none';inp.focus();}
+
+/* ===== AI RIFZZ STORE - JAWAB APAPUN KAYAK GEMINI, KECUALI YANG DILARANG ===== */
+function aiCepat(q){ document.getElementById('aiText').value=q; kirimAI(); }
+function jawabAI(q){
+  let t=q.toLowerCase();
+  if(t.includes('halo')||t.includes('hai')||t.includes('hi ')||t.includes('selamat')) return 'Halo Bos! 👋 Gua AI RIFZZ. Ada yang bisa gua bantu? Mau tanya soal JB, rekber, clone, atau apa aja bebas, gas tanya aja!';
+  if(t.includes('siapa') && (t.includes('kamu')||t.includes('lu')||t.includes('anda'))) return 'Gua AI RIFZZ STORE 🤖, asistennya admin RIFZZ. Gua bisa jawab apapun kayak Gemini, tapi versi RIFZZ yang lebih kece. Admin asli kita namanya RIFZZ, WA-nya 0857-2588-7705. Kalo mau order beneran, chat admin aja ya!';
+  if(t.includes('rekber')||t.includes('reber')) return 'Rekber itu perantara admin biar JB aman 100% Bos! Caranya: 1. Chat admin di 0857-2588-7705, 2. Admin bikinin grup rekber, 3. Pembeli transfer ke ADMIN (bukan ke penjual), 4. Penjual serahin akun, 5. Pembeli cek + ganti data, 6. Kalo DONE baru duit diterusin ke penjual. Kalo bermasalah duit balik 100% ke pembeli. Aman pol!';
+  if(t.includes('clone')||t.includes('penipu')||t.includes('scam')||t.includes('asli')) return 'Cara bedain RIFZZ asli vs clone, gampang Bos! 1. Nomor WA asli cuma 0857-2588-7705, nomor lain = penipu. 2. Linktree asli cuma linktr.ee/rifzzstore10. 3. RIFZZ asli selalu pake grup rekber, kalo diajak transfer langsung = penipu. 4. RIFZZ asli nggak pernah maksa buru-buru transfer. Rumusnya: NOMOR BEDA = PENIPU. RIFZZ CUMA 1!';
+  if(t.includes('order')||t.includes('beli')||t.includes('jb')||t.includes('jual beli')) return 'Mau order JB akun game? Gampang Bos! 1. Pencet titik tiga ⋮ -> ORDER MELALUI WEB, isi nama + mau order apa, atau 2. Langsung chat WA admin 0857-2588-7705 bilang "Halo min, mau order". Admin bakal layanin lu, pake rekber biar aman. Harga? Tanya admin aja, harga jujur, garansi 100%!';
+  if(t.includes('harga')||t.includes('berapa')||t.includes('murah')||t.includes('fee')) return 'Harga JB akun game itu beda-beda Bos, tergantung akunnya - level, skin, rank, dll. Fee rekber murah, tanya admin aja langsung di 0857-2588-7705 biar dikasih harga jujur. Tenang, di RIFZZ STORE harga jujur, nggak ada yang ditutup-tutupin. Garansi 100%!';
+  if(t.includes('aman')||t.includes('amanah')||t.includes('percaya')||t.includes('testi')) return 'RIFZZ STORE itu amanah 100% Bos! Udah 1200+ order, 0 kasus rip / scam. Testinya real semua, bisa cek di channel testimoni. Kenapa aman? 1. Admin asli bukan bot, 2. Pake rekber admin, 3. Garansi 100% uang balik kalo bermasalah, 4. Fast respon. Jadi udah percaya kan? Gas order!';
+  if(t.includes('cara') && t.includes('ganti')) return 'Cara ganti data akun abis JB: Login akunnya, langsung ganti email ke email lu, ganti password baru yang kuat, ganti no HP / bind ke punya lu, hapus bind lama. Admin RIFZZ bakal ngajarin sampe bisa kok, jadi jangan takut. Kalo bingung, chat admin 0857-2588-7705!';
+  if(t.includes('game')||t.includes('ff')||t.includes('free fire')||t.includes('ml')||t.includes('mobile legends')||t.includes('pubg')||t.includes('roblox')) return 'Game apa aja bisa JB di RIFZZ STORE Bos! Mau JB akun game apapun, tinggal bilang ke admin mau game apa, akun kayak gimana. Admin bakal cariin / bantu prosesnya pake rekber biar aman. Chat aja 0857-2588-7705, sebutin game lu!';
+  if(t.includes('belajar')||t.includes('matematika')||t.includes('mtk')||t.includes('fisika')||t.includes('bahasa')||t.includes('pelajaran')||t.includes('pr ')||t.includes('tugas')) return 'Boleh Bos, gua bantu belajar juga! Coba kirim soal lu yang lengkap, gua jelasin langkah-langkahnya sampe lu paham. Gua bisa bantu matematika, fisika, bahasa, dll. Kalo soal JB mah gua paling jago, kalo pelajaran juga gas! Kirim soalnya ya!';
+  if(t.includes('cuaca')||t.includes('hujan')) return 'Cuaca hari ini paling enak cek di HP lu Bos, tapi kalo mau order JB mah cuacanya selalu cerah di RIFZZ STORE 😎 Gas order aja, admin fast respon walau hujan!';
+  if(t.includes('cinta')||t.includes('pacar')||t.includes('doi')||t.includes('galau')) return 'Waduh soal cinta Bos 😅 Gua AI RIFZZ, jagonya soal JB. Tapi saran gua: kalo doi cuek, mending fokus order JB dulu, akun bagus, doi auto ngelirik. Kalo galau, cerita aja ke admin RIFZZ di WA, admin baik kok!';
+  if(t.includes('terima kasih')||t.includes('makasih')||t.includes('thanks')) return 'Sama-sama Bos! 🙏 Seneng bisa bantu. Kalo udah percaya, gas order di RIFZZ STORE ya, WA 0857-2588-7705. Jangan lupa bilang makasih ke admin aslinya juga, adminnya ganteng!';
+  if(t.includes('admin')||t.includes('rifzz')) return 'Admin RIFZZ itu owner RIFZZ STORE, domisili Tegal, Jawa Tengah. WA resmi cuma 1: 0857-2588-7705. Prinsipnya: "Mending rugi dikit, daripada nipu customer". Jadi amanah pol! Kalo ada yang ngaku RIFZZ tapi nomornya beda, itu penipu!';
+  return 'Oke Bos, gua paham pertanyaan lu: "'+q+'". Menurut AI RIFZZ, intinya gini: kalo itu soal JB / rekber / order, jawabannya pasti pake admin RIFZZ biar aman 100% - chat aja 0857-2588-7705. Kalo itu soal umum, coba tanya lebih detail lagi ke gua, gua bakal jelasin lebih panjang. Atau mau langsung tanya ke admin aslinya juga boleh, admin fast respon!';
+}
+function kirimAI(){
+  if(cekBan()) return;
+  let inp=document.getElementById('aiText'); let txt=inp.value.trim(); if(!txt) return;
+  if(containsBadWord(txt) || containsDilarang(txt)){ inp.value=''; let kena=tambahPelanggaran(); if(!kena){ let list=document.getElementById('aiChatList'); list.innerHTML+='<div class="gmsg ai"><small>🤖 AI RIFZZ STORE</small>Maaf Bos, yang itu gua nggak bisa jawab, itu melanggar peraturan RIFZZ. Tanya yang lain aja ya, soal JB gapapa!</div>'; list.scrollTop=list.scrollHeight; } return; }
+  let list=document.getElementById('aiChatList');
+  list.innerHTML+='<div class="gmsg me"><small>KAMU</small>'+escapeHtml(txt)+'</div>';
+  inp.value='';
+  list.innerHTML+='<div class="gmsg ai" id="aiLoading"><small>🤖 AI RIFZZ STORE</small>AI RIFZZ lagi mikir...</div>';
+  let body=document.getElementById('aiBody'); body.scrollTop=body.scrollHeight;
+  setTimeout(()=>{
+    let load=document.getElementById('aiLoading'); if(load) load.remove();
+    list.innerHTML+='<div class="gmsg ai"><small>🤖 AI RIFZZ STORE</small>'+escapeHtml(jawabAI(txt))+'<br><br><small style="opacity:.6">Mau order beneran? Chat admin 0857-2588-7705</small></div>';
+    body.scrollTop=body.scrollHeight;
+  },700);
+}
+document.getElementById('aiText')?.addEventListener('keydown',e=>{if(e.key==='Enter')kirimAI()});
+
+let pubnub = new PubNub({publishKey:'demo',subscribeKey:'demo',userId:'rifzz-'+Math.random().toString(36).slice(2,8)});
+let CH='rifzz-store-global-v1';
+let CH_ORDER='rifzz-store-order-v1';
+let CH_ORDER_LOCK='rifzz-store-order-lock-v1';
+let orderSaya = null; let orderSedang = null;
+function tampilkanChat(data){ let b=document.getElementById('globalBody'); if(!b) return; if(data.type==='clear'){ b.innerHTML='<div class="gmsg admin"><small>👑 ADMIN RIFZZ</small>Chat global udah dihapus sama admin RIFZZ 🗑️<br>Chat baru mulai dari sini ya!</div>'; scrollGlobal(); return; } if(data.type==='join'){ b.innerHTML+='<div class="gmsg" style="background:#e8ffe8;text-align:center;font-size:12px"><small>SYSTEM</small>'+escapeHtml(data.nama)+' gabung ke Chat Global 🌎</div>'; scrollGlobal(); return; } if(data.type==='delete'){ let el=document.querySelector('[data-msgid="'+data.id+'"]'); if(el) el.remove(); return; } if(document.querySelector('[data-msgid="'+data.id+'"]')) return; let cls='gmsg me'; if(data.isAdmin) cls='gmsg admin'; else if(data.isAI) cls='gmsg ai'; let delHtml = '<button class="delBtn" data-del="'+data.id+'" onclick="hapusSatuChatOnline(this)" style="display:'+(isAdmin?'block':'none')+'">✖</button>'; b.innerHTML+='<div class="'+cls+'" data-msgid="'+data.id+'">'+delHtml+'<small>'+escapeHtml(data.nama)+' • '+escapeHtml(data.jam)+(data.isTagging?' • 📣 NGETAG @rifzzadminasli':'')+'</small>'+formatTag(escapeHtml(data.pesan))+'</div>'; scrollGlobal(); }
+function tampilkanOrderChat(data){ if(data.type==='lock'){ orderSedang={nama:data.nama,mau:data.mau,id:data.id}; refreshOrderUI(); return; } if(data.type==='unlock'){ orderSedang=null; orderSaya=null; document.getElementById('orderChatList').innerHTML=''; refreshOrderUI(); return; } if(data.type==='kick'){ if(orderSaya===data.nama){ orderSaya=null; alert('Order lu udah diselesaikan sama admin RIFZZ 🙏 Makasih udah order!'); } orderSedang=null; document.getElementById('orderChatList').innerHTML=''; refreshOrderUI(); return; } if(data.type==='orderChat'){ let list=document.getElementById('orderChatList'); if(!list) return; if(document.querySelector('[data-orderid="'+data.id+'"]')) return; let cls = data.isAdmin ? 'gmsg admin' : 'gmsg me'; list.innerHTML+='<div class="'+cls+'" data-orderid="'+data.id+'"><small>'+escapeHtml(data.nama)+' • '+escapeHtml(data.jam)+'</small>'+formatTag(escapeHtml(data.pesan))+'</div>'; let body=document.getElementById('orderBody'); body.scrollTop=body.scrollHeight; } }
+pubnub.addListener({message:function(e){ if(e.channel===CH) tampilkanChat(e.message); if(e.channel===CH_ORDER || e.channel===CH_ORDER_LOCK) tampilkanOrderChat(e.message); }});
+pubnub.subscribe({channels:[CH,CH_ORDER,CH_ORDER_LOCK]});
+pubnub.fetchMessages({channels:[CH],count:100},function(s,res){ if(res && res.channels && res.channels[CH]){ res.channels[CH].forEach(m=>tampilkanChat(m.message)); } });
+pubnub.fetchMessages({channels:[CH_ORDER_LOCK],count:1},function(s,res){ if(res && res.channels && res.channels[CH_ORDER_LOCK] && res.channels[CH_ORDER_LOCK].length){ let last=res.channels[CH_ORDER_LOCK][res.channels[CH_ORDER_LOCK].length-1].message; if(last.type==='lock') orderSedang={nama:last.nama,mau:last.mau,id:last.id}; if(last.type==='unlock'||last.type==='kick') orderSedang=null; refreshOrderUI(); } });
+pubnub.fetchMessages({channels:[CH_ORDER],count:50},function(s,res){ if(res && res.channels && res.channels[CH_ORDER]){ res.channels[CH_ORDER].forEach(m=>tampilkanOrderChat(m.message)); } });
+function kirimOnline(obj){ pubnub.publish({channel:CH,message:obj}); }
+function hapusSemuaChat(){ if(!isAdmin){alert('Cuma admin RIFZZ yang bisa hapus chat!');return;} if(!confirm('Hapus SEMUA chat global buat SEMUA orang?'))return; kirimOnline({type:'clear',id:'clear-'+Date.now()}); alert('Semua chat udah kehapus buat semua orang!'); }
+function hapusSatuChat(btn){ hapusSatuChatOnline(btn); }
+function hapusSatuChatOnline(btn){ if(!isAdmin){alert('Cuma admin RIFZZ yang bisa hapus chat!');return;} let id = btn.getAttribute('data-del'); if(!id) { btn.closest('.gmsg').remove(); return; } if(!confirm('Hapus chat ini buat semua orang?'))return; kirimOnline({type:'delete',id:id}); }
+function saveChat(){}
+function cekAdmin(nama){ let low=nama.toLowerCase().replace(/[^a-z0-9]/g,''); if(low==='rifzz'||low==='rifzzstore'||low==='rifxz'||low==='rifxzstore'||low==='adminrifzz'||low==='rifzzadminasli'){ let kode=prompt('Lu RIFZZ Admin Asli? Masukin KODE ADMIN (4 angka terakhir WA lu):',''); if(kode==='7705'){return true;}else{showNyamar();return 'nyamar';} } return false; }
+function isNyamarChat(txt){let t=(txt||'').toLowerCase();if(t.includes('gw rifzz')||t.includes('aku rifzz')||t.includes('saya rifzz')||t.includes('gw rifxz')||t.includes('aku rifxz')||t.includes('saya rifxz')||t.includes('gw admin')||t.includes('aku admin'))return true;return false;}
+function openGlobal(){ if(cekBan()) return; document.getElementById('globalChat').style.display='flex'; if(!window.myName){ let n=prompt('Masukin nama lu buat Chat Global:','Tamu'); n=(n&&n.trim()!=='')?n.trim():'Tamu'; let hasil=cekAdmin(n); if(hasil==='nyamar')return; if(hasil===true){ isAdmin=true; window.myName='RIFZZ'; document.getElementById('modeTxt').textContent='Mode: ADMIN RIFZZ 👑 - Lu yang bales'; document.getElementById('adminBtn').textContent='KELUAR MODE ADMIN'; document.getElementById('adminBtn').style.background='#ffcc00'; document.getElementById('adminBtn').style.color='#000'; document.getElementById('hapusSemuaBtn').style.display='block'; alert('Halo RIFZZ! Lu masuk sebagai ADMIN ASLI 👑 - RIFZZ cuma lu 1! Lu bisa hapus chat!'); document.querySelectorAll('.delBtn').forEach(b=>b.style.display='block'); } else {window.myName=n;} kirimOnline({type:'join',nama:window.myName,id:'join-'+Date.now()}); scrollGlobal(); } }
+function closeGlobal(){document.getElementById('globalChat').style.display='none'}
+function toggleAdmin(){ if(!isAdmin){ let hasil=cekAdmin('rifzz'); if(hasil!=='nyamar'&&hasil===true){ isAdmin=true; window.myName='RIFZZ'; document.getElementById('modeTxt').textContent='Mode: ADMIN RIFZZ 👑'; document.getElementById('adminBtn').textContent='KELUAR MODE ADMIN'; document.getElementById('adminBtn').style.background='#ffcc00'; document.getElementById('adminBtn').style.color='#000'; document.getElementById('hapusSemuaBtn').style.display='block'; document.querySelectorAll('.delBtn').forEach(b=>b.style.display='block'); document.getElementById('orderAdminBar').style.display='flex'; alert('Masuk mode Admin RIFZZ! RIFZZ cuma lu 1! Lu bisa hapus chat!'); } } else{ isAdmin=false; window.myName='Tamu'; document.getElementById('modeTxt').textContent='Mode: TAMU - Chat Bebas'; document.getElementById('adminBtn').textContent='👑 SAYA RIFZZ ADMIN ASLI'; document.getElementById('adminBtn').style.background='#000'; document.getElementById('adminBtn').style.color='#fff'; document.getElementById('hapusSemuaBtn').style.display='none'; document.querySelectorAll('.delBtn').forEach(b=>b.style.display='none'); document.getElementById('orderAdminBar').style.display='none'; } refreshOrderUI(); }
+function scrollGlobal(){let b=document.getElementById('globalBody');b.scrollTop=b.scrollHeight}
+function sendGlobal(){ if(cekBan()) return; let inp=document.getElementById('globalText');let txt=inp.value.trim();if(!txt)return; if(containsBadWord(txt)){ inp.value=''; document.getElementById('mentionBox').style.display='none'; let kenaBan = tambahPelanggaran(); if(kenaBan) return; return; } if(!isAdmin && isNyamarChat(txt)){showNyamar();inp.value=''; document.getElementById('mentionBox').style.display='none'; return;} let isTagging = txt.toLowerCase().includes('@rifzz') || txt.toLowerCase().includes('@rifzzadminasli'); let nama = isAdmin ? '👑 ADMIN RIFZZ' : (window.myName||'Tamu'); kirimOnline({type:'chat',id:'m-'+Date.now()+'-'+Math.random().toString(36).slice(2,6),nama:nama,pesan:txt,jam:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),isAdmin:isAdmin,isTagging:isTagging}); inp.value=''; document.getElementById('mentionBox').style.display='none'; if(!isAdmin){ if(adminTimer)clearTimeout(adminTimer); adminTimer=setTimeout(()=>{ kirimOnline({type:'chat',id:'ai-'+Date.now(),nama:'🤖 AUTO - ADMIN LAGI ISTIRAHAT',pesan:'maaf wok admin lagi istirahat sorii yaa 🙏 Nanti kalo admin udah bangun langsung dibales ya. Atau chat WA aja: 0857-2588-7705',jam:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),isAdmin:false,isAI:true}); }, 3600000); } else { if(adminTimer)clearTimeout(adminTimer); } }
+document.getElementById('globalText')?.addEventListener('keydown',e=>{if(e.key==='Enter')sendGlobal()});
+setInterval(()=>{let el=document.getElementById('onlineCount'); if(el) el.textContent=10+Math.floor(Math.random()*15)},5000);
+function refreshOrderUI(){ let statusEl=document.getElementById('orderStatusTxt'); let siapaEl=document.getElementById('orderSiapaTxt'); let sibukBox=document.getElementById('orderSibukBox'); let gabungBox=document.getElementById('orderGabungBox'); let chatBox=document.getElementById('orderChatBox'); let inputWrap=document.getElementById('orderInputWrap'); let adminBar=document.getElementById('orderAdminBar'); if(isAdmin){ adminBar.style.display='flex'; document.getElementById('orderAdminTxt').textContent = orderSedang ? 'Mode: ADMIN - Lagi layani: '+orderSedang.nama : 'Mode: ADMIN - Server kosong'; } else { adminBar.style.display='none'; } if(!orderSedang){ if(statusEl) statusEl.textContent='🟢 SERVER KOSONG - SILAHKAN ORDER'; if(siapaEl) siapaEl.textContent='- Belum ada -'; sibukBox.style.display='none'; if(isAdmin){ gabungBox.style.display='none'; chatBox.style.display='flex'; inputWrap.style.display='block'; document.getElementById('orderChatList').innerHTML='<div class="gmsg admin"><small>👑 ADMIN RIFZZ</small>Server kosong. Nunggu buyer masuk order ya!</div>'; } else { gabungBox.style.display='block'; chatBox.style.display='none'; inputWrap.style.display='none'; } return; } if(statusEl) statusEl.textContent='🔴 SERVER DIPAKE - '+orderSedang.nama; if(siapaEl) siapaEl.textContent=orderSedang.nama+' - Mau: '+orderSedang.mau; if(isAdmin || orderSaya===orderSedang.nama){ sibukBox.style.display='none'; gabungBox.style.display='none'; chatBox.style.display='flex'; inputWrap.style.display='block'; if(!document.querySelector('[data-orderid="welcome-order"]')){ document.getElementById('orderChatList').innerHTML='<div class="gmsg admin" data-orderid="welcome-order"><small>👑 ADMIN RIFZZ</small>Halo '+escapeHtml(orderSedang.nama)+'! Order lu: '+escapeHtml(orderSedang.mau)+'<br>Chat disini aja ya, cuma lu + admin yang liat. Buyer lain nggak bisa masuk sampe lu selesai.</div>'; } } else { sibukBox.style.display='block'; document.getElementById('orderSibukSiapa').textContent=orderSedang.nama; gabungBox.style.display='none'; chatBox.style.display='none'; inputWrap.style.display='none'; } }
+function mulaiOrder(){ if(cekBan()) return; if(orderSedang){ alert('Maaf server sedang di pake sama '+orderSedang.nama+'! Nunggu selesai baru bisa!'); refreshOrderUI(); return; } let nama=document.getElementById('orderNama').value.trim(); let mau=document.getElementById('orderMau').value.trim(); if(!nama){ alert('Isi nama lu dulu!'); return; } if(!mau){ mau='Mau order'; } if(containsBadWord(nama+' '+mau)){ tambahPelanggaran(); return; } orderSaya=nama; window.myName=nama; pubnub.publish({channel:CH_ORDER_LOCK,message:{type:'lock',nama:nama,mau:mau,id:'ord-'+Date.now()}}); pubnub.publish({channel:CH_ORDER,message:{type:'orderChat',id:'o-'+Date.now(),nama:'SYSTEM',pesan:nama+' mulai order: '+mau,jam:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),isAdmin:false}}); setTimeout(refreshOrderUI,300); }
+function kirimOrder(){ if(cekBan()) return; let inp=document.getElementById('orderText'); let txt=inp.value.trim(); if(!txt) return; if(!isAdmin && !orderSaya && !orderSedang){ alert('Isi order dulu di atas!'); return; } if(!isAdmin && orderSedang && orderSaya!==orderSedang.nama){ alert('Maaf server sedang di pake! Nunggu selesai!'); return; } if(containsBadWord(txt)){ inp.value=''; tambahPelanggaran(); return; } let nama = isAdmin ? '👑 ADMIN RIFZZ' : (orderSaya||window.myName||'Tamu'); pubnub.publish({channel:CH_ORDER,message:{type:'orderChat',id:'o-'+Date.now()+'-'+Math.random().toString(36).slice(2,5),nama:nama,pesan:txt,jam:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),isAdmin:isAdmin}}); inp.value=''; }
+function buyerSelesaikanOrder(){ if(!confirm('Order udah selesai? Nanti giliran dikasih ke buyer lain ya!')) return; pubnub.publish({channel:CH_ORDER_LOCK,message:{type:'unlock',id:'unlock-'+Date.now()}}); pubnub.publish({channel:CH_ORDER,message:{type:'orderChat',id:'o-done-'+Date.now(),nama:'SYSTEM',pesan:'Order '+orderSaya+' udah selesai. Server kosong lagi, buyer berikutnya silahkan masuk!',jam:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),isAdmin:false}}); orderSaya=null; document.getElementById('orderChatList').innerHTML=''; refreshOrderUI(); alert('Makasih udah order Bos! 🙏'); }
+function adminSelesaikanOrder(){ if(!orderSedang){ alert('Server lagi kosong, nggak ada yang dihapus!'); return; } if(!confirm('Selesaikan / hapus '+orderSedang.nama+' dari order? Biar buyer lain bisa masuk!')) return; pubnub.publish({channel:CH_ORDER_LOCK,message:{type:'kick',nama:orderSedang.nama,id:'kick-'+Date.now()}}); pubnub.publish({channel:CH_ORDER,message:{type:'orderChat',id:'o-kick-'+Date.now(),nama:'SYSTEM',pesan:'Admin udah selesaiin order '+orderSedang.nama+'. Server kosong lagi!',jam:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),isAdmin:true}}); orderSedang=null; document.getElementById('orderChatList').innerHTML=''; refreshOrderUI(); }
+document.getElementById('orderText')?.addEventListener('keydown',e=>{if(e.key==='Enter')kirimOrder()});
+refreshOrderUI();
+</script>
+</body>
+</html>
